@@ -24,10 +24,10 @@ class Neo550Test : public frc2::SubsystemBase {
  private:
 
   //Init SparkMax with Neo 550 brushless motor
-  rev::CANSparkMax          m_neo550{CAN_NEO550TEST, rev::CANSparkMax::MotorType::kBrushless};
-  rev::SparkPIDController   m_neo55o_pid     = m_neo550.GetPIDController();
-  rev::SparkRelativeEncoder m_neo550_encoder = m_neo550.GetEncoder(rev::SparkRelativeEncoder::Type::kHallSensor);
-
+  rev::CANSparkMax          m_neo550_motor{CAN_NEO550TEST, rev::CANSparkMax::MotorType::kBrushless};
+  rev::SparkPIDController   m_neo550_pid     = m_neo550_motor.GetPIDController();
+  rev::SparkRelativeEncoder m_neo550_encoder = m_neo550_motor.GetEncoder(rev::SparkRelativeEncoder::Type::kHallSensor);
+          
 
 
 
