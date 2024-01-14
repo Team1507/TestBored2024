@@ -6,19 +6,33 @@
 
 #include <frc2/command/CommandScheduler.h>
 
-void Robot::RobotInit() {}
+void Robot::RobotInit() 
+{
+  //*************************** INIT ******************************
+  std::cout<<"RobotInit"<<std::endl;
+  std::cout<<"FRC2024: TestBored"<<std::endl;
+  std::cout<<"Version: " << __DATE__ <<"  "<<__TIME__<<std::endl<<std::endl; 
 
-void Robot::RobotPeriodic() {
+
+}
+
+void Robot::RobotPeriodic() 
+{
   frc2::CommandScheduler::GetInstance().Run();
 }
 
-void Robot::DisabledInit() {}
+void Robot::DisabledInit() 
+{
+  std::cout<<"Disabled Init"<<std::endl;
+}
 
 void Robot::DisabledPeriodic() {}
 
 void Robot::DisabledExit() {}
 
-void Robot::AutonomousInit() {
+void Robot::AutonomousInit()
+{
+  std::cout<<" **** Auto Init ******"<<std::endl;
   m_autonomousCommand = m_container.GetAutonomousCommand();
 
   if (m_autonomousCommand) {
@@ -30,10 +44,15 @@ void Robot::AutonomousPeriodic() {}
 
 void Robot::AutonomousExit() {}
 
-void Robot::TeleopInit() {
+void Robot::TeleopInit() 
+{
+  //Clean up any leftovers from Autonomous
   if (m_autonomousCommand) {
     m_autonomousCommand->Cancel();
   }
+  std::cout<<"Teleop Init"<<std::endl;
+
+
 }
 
 void Robot::TeleopPeriodic() {}

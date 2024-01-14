@@ -9,6 +9,9 @@
 #include <frc/TimedRobot.h>
 #include <frc2/command/CommandPtr.h>
 
+#include <iostream>
+using namespace std;
+
 #include "RobotContainer.h"
 
 class Robot : public frc::TimedRobot {
