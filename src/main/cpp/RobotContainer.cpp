@@ -3,10 +3,23 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "RobotContainer.h"
+#include "frc/smartdashboard/SmartDashboard.h"
 
 #include <frc2/command/Commands.h>
 
-RobotContainer::RobotContainer() {
+#include "commands/CmdNeo550SetPosition.h"
+#include "commands/GrpNeo550ThereAndBack.h"
+
+RobotContainer::RobotContainer() 
+{
+
+
+  //******************SmartDashboard Buttons***************
+  frc::SmartDashboard::PutData("Neo550PositionTest",     new CmdNeo550SetPosition(50.0) );
+  frc::SmartDashboard::PutData("GrpNeo550ThereAndBack",  new GrpNeo550ThereAndBack()    );
+
+
+
   ConfigureBindings();
 }
 

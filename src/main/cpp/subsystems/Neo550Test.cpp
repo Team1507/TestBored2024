@@ -35,12 +35,12 @@ void Neo550Test::Periodic()
     frc::SmartDashboard::PutNumber("Neo550 Power",   GetPower()   );
 
 
-    // //Testing Power
-    // SetPower( frc::SmartDashboard::GetNumber("Neo550 SetPwr",0) );
+    // // //Testing Power
+    // // SetPower( frc::SmartDashboard::GetNumber("Neo550 SetPwr",0) );
 
-    //Testing Position with PID
-    //Position = NumRotataions
-    SetPosition( frc::SmartDashboard::GetNumber("Neo550 SetPos",0) );
+    // //Testing Position with PID
+    // //Position = NumRotataions
+    // SetPosition( frc::SmartDashboard::GetNumber("Neo550 SetPos",0) );
 
 
 }
