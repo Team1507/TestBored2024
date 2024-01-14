@@ -9,6 +9,9 @@
 #include <frc/TimedRobot.h>
 #include <frc2/command/CommandPtr.h>
 
+#include "RobotContainer.h"
+extern RobotContainer robotContainer;  //Make RobotContainer Global
+
 #include <iostream>
 using namespace std;
 
@@ -34,5 +37,5 @@ class Robot : public frc::TimedRobot {
  private:
   std::optional<frc2::CommandPtr> m_autonomousCommand;
 
-  RobotContainer m_container;
+  //RobotContainer m_container;  //Nope.  Not today!
 };

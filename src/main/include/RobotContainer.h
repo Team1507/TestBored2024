@@ -5,10 +5,26 @@
 #pragma once
 
 #include <frc2/command/CommandPtr.h>
+#include <frc/XboxController.h>
+#include <frc/Timer.h>
+
+#include "subsystems/Neo550Test.h"
 
 class RobotContainer {
  public:
   RobotContainer();
+
+  //****************Controllers*******************
+  //frc::XboxController m_botDriver{0};
+
+  frc::Timer m_timer;
+
+  //****************Subsystems*******************
+  Neo550Test m_neo550Test;
+
+
+
+
 
   frc2::CommandPtr GetAutonomousCommand();
 

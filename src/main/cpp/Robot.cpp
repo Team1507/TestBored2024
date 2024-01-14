@@ -6,6 +6,10 @@
 
 #include <frc2/command/CommandScheduler.h>
 
+
+RobotContainer robotContainer;  //Global Variable
+
+
 void Robot::RobotInit() 
 {
   //*************************** INIT ******************************
@@ -33,7 +37,7 @@ void Robot::DisabledExit() {}
 void Robot::AutonomousInit()
 {
   std::cout<<" **** Auto Init ******"<<std::endl;
-  m_autonomousCommand = m_container.GetAutonomousCommand();
+  m_autonomousCommand = robotContainer.GetAutonomousCommand();
 
   if (m_autonomousCommand) {
     m_autonomousCommand->Schedule();
