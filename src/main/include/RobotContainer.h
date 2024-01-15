@@ -9,6 +9,8 @@
 #include <frc/Timer.h>
 
 #include "subsystems/Neo550Test.h"
+#include "subsystems/TalonSRXTest.h"
+
 
 class RobotContainer {
  public:
@@ -20,7 +22,8 @@ class RobotContainer {
   frc::Timer m_timer;
 
   //****************Subsystems*******************
-  Neo550Test m_neo550Test;
+  Neo550Test   m_neo550Test;
+  TalonSRXTest m_talonSRXTest;
 
 
 

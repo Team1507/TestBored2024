@@ -4,3 +4,4 @@
 
 //********** CAN ID **********
 #define CAN_NEO550TEST         3
+#define CAN_TALONSRXTEST       7
