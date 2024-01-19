@@ -8,6 +8,7 @@
 #include <frc/XboxController.h>
 #include <frc/Timer.h>
 
+#include "subsystems/BrushedMotor.h"
 #include "subsystems/Neo550Test.h"
 #include "subsystems/TalonSRXTest.h"
 
@@ -23,6 +24,7 @@ class RobotContainer {
 
   //****************Subsystems*******************
   Neo550Test   m_neo550Test;
+  BrushedMotor m_brushedMotor;
 //TalonSRXTest m_talonSRXTest;  
 
 

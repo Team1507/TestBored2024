@@ -1,19 +1,15 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
-#include "subsystems/brushedMotor.h"
+#include "subsystems/BrushedMotor.h"
 #include <frc/SmartDashboard/SmartDashboard.h>
 #include "Robot.h"
 
 
-brushedMotor::brushedMotor()
+BrushedMotor::BrushedMotor()
 {
-    cout << "brushedMotor Constructor" << endl;
+    cout << "BrushedMotor Constructor" << endl;
 
     //Initialize 550 Motor
-    m_brushed_motor.RestoreFactoryDefaults();
-    m_brushed_motor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
+    m_brushedMotor.RestoreFactoryDefaults();
+    m_brushedMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
 
     // m_neo550_encoder.SetPosition(0.0);
     // m_neo550_pid.SetP(0.15);
@@ -21,22 +17,22 @@ brushedMotor::brushedMotor()
 
 
     //For Local Testing
-    frc::SmartDashboard::PutNumber("brushedMotor SetPwr",0.0);
+    frc::SmartDashboard::PutNumber("BrushedMotor SetPwr",0.0);
     // frc::SmartDashboard::PutNumber("Neo550 SetPos",0.0);
 
 
 }
 
 // This method will be called once per scheduler run
-void brushedMotor::Periodic() 
+void BrushedMotor::Periodic() 
 {
     //Outputs
     // frc::SmartDashboard::PutNumber("Neo550 Encoder", GetEncoder() );
-    frc::SmartDashboard::PutNumber("brushedMotor Power",   GetPower()   );
+    frc::SmartDashboard::PutNumber("BrushedMotor Power",   GetPower()   );
 
 
     // // //Testing Power
-    // // SetPower( frc::SmartDashboard::GetNumber("Neo550 SetPwr",0) );
+    SetPower( frc::SmartDashboard::GetNumber("BrushedMotor SetPwr",0) );
 
     // //Testing Position with PID
     // //Position = NumRotataions
@@ -46,17 +42,17 @@ void brushedMotor::Periodic()
 }
 
 
-  void  brushedMotor::Stop(void)
+  void  BrushedMotor::Stop(void)
   {
-    m_brushed_motor.Set(0.0);
+    m_brushedMotor.Set(0.0);
   }
-  void  brushedMotor::SetPower(float power)
+  void  BrushedMotor::SetPower(float power)
   {
-    m_brushed_motor.Set(power);      
+    m_brushedMotor.Set(power);      
   }
-  float brushedMotor::GetPower(void)
+  float BrushedMotor::GetPower(void)
   {
-    return m_brushed_motor.Get();
+    return m_brushedMotor.Get();
   }
 //   void  brushedMotor::SetPosition(float position)
 //   {

@@ -9,9 +9,9 @@
 
 #include "Constants.h"
 
-class brushedMotor : public frc2::SubsystemBase {
+class BrushedMotor : public frc2::SubsystemBase {
  public:
-  brushedMotor();
+  BrushedMotor();
   void Periodic() override;
 
 
@@ -22,7 +22,7 @@ class brushedMotor : public frc2::SubsystemBase {
  private:
 
   //Init SparkMax with Neo 550 brushless motor
-  rev::CANSparkMax          m_brushed_motor{CAN_NEO550TEST, rev::CANSparkMax::MotorType::kBrushed};
+  rev::CANSparkMax          m_brushedMotor{CAN_BRUSHEDMOTOR, rev::CANSparkMax::MotorType::kBrushed};
 
 
 };
