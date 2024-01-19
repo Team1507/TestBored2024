@@ -11,6 +11,8 @@
 #include "subsystems/BrushedMotor.h"
 #include "subsystems/Neo550Test.h"
 #include "subsystems/TalonSRXTest.h"
+#include "subsystems/TimeOfFlightTest.h"
+
 
 
 class RobotContainer {
@@ -23,9 +25,10 @@ class RobotContainer {
   frc::Timer m_timer;
 
   //****************Subsystems*******************
-  Neo550Test   m_neo550Test;
-  BrushedMotor m_brushedMotor;
-//TalonSRXTest m_talonSRXTest;  
+  Neo550Test       m_neo550Test;
+  BrushedMotor     m_brushedMotor;
+  TimeOfFlightTest m_timeOfFlightTest;
+//TalonSRXTest     m_talonSRXTest;  
 
 
 
