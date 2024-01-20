@@ -16,6 +16,7 @@ void Robot::RobotInit()
   std::cout<<"RobotInit"<<std::endl;
   std::cout<<"FRC2024: TestBored"<<std::endl;
   std::cout<<"Version: " << __DATE__ <<"  "<<__TIME__<<std::endl<<std::endl; 
+  //SecondLaptopPustTest
 
 
 }
