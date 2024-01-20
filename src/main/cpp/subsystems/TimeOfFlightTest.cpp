@@ -9,7 +9,8 @@ TimeOfFlightTest::TimeOfFlightTest()
 {
 
 
-    m_timeOfFlight.SetRangingMode(frc::TimeOfFlight::RangingMode::kShort, 20.0);
+    m_timeOfFlight.SetRangingMode(frc::TimeOfFlight::RangingMode::kShort, 50.0);  //Max 24ms sample rate per datasheet
+    m_timeOfFlight.SetRangeOfInterest(8,8,12,12);   //Use center 4 pixels for FOV
 
 };
 
@@ -19,6 +20,8 @@ void TimeOfFlightTest::Periodic()
     frc::SmartDashboard::PutBoolean("TOF: IsRangeValid",  m_timeOfFlight.IsRangeValid()   );
     frc::SmartDashboard::PutNumber("TOF: GetRange",       m_timeOfFlight.GetRange()       );
     frc::SmartDashboard::PutNumber("TOF: GetStatus",      m_timeOfFlight.GetStatus()      );
+
+    
 }
 
 
