@@ -10,7 +10,8 @@ BrushedMotor::BrushedMotor()
     //Initialize 550 Motor
     m_brushedMotor.RestoreFactoryDefaults();
     m_brushedMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
-
+    
+    m_brushed_encoder.SetPosition(1.0);
     // m_neo550_encoder.SetPosition(0.0);
     // m_neo550_pid.SetP(0.15);
     // m_neo550_pid.SetOutputRange(-0.1,0.1);
@@ -19,8 +20,7 @@ BrushedMotor::BrushedMotor()
     //For Local Testing
     frc::SmartDashboard::PutNumber("BrushedMotor SetPwr",0.0);
     // frc::SmartDashboard::PutNumber("Neo550 SetPos",0.0);
-
-
+   
 }
 
 // This method will be called once per scheduler run
@@ -38,6 +38,7 @@ void BrushedMotor::Periodic()
     // //Position = NumRotataions
     // SetPosition( frc::SmartDashboard::GetNumber("Neo550 SetPos",0) );
 
+   frc::SmartDashboard::PutNumber("BrushedMotor encoder",m_brushed_encoder.GetPosition());
 
 }
 

@@ -21,8 +21,8 @@ class BrushedMotor : public frc2::SubsystemBase {
 
  private:
 
-  //Init SparkMax with Neo 550 brushless motor
+  //Init SparkMax with 775 Pro with encoder test
   rev::CANSparkMax          m_brushedMotor{CAN_BRUSHEDMOTOR, rev::CANSparkMax::MotorType::kBrushed};
-
+  rev::SparkMaxAlternateEncoder m_brushed_encoder = m_brushedMotor.GetAlternateEncoder(rev::SparkMaxAlternateEncoder::Type::kQuadrature,1024);
 
 };
