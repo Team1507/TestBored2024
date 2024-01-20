@@ -11,6 +11,7 @@
 #include "subsystems/Neo550Test.h"
 #include "subsystems/TalonSRXTest.h"
 #include "subsystems/TimeOfFlightTest.h"
+#include "subsystems/brushedMotor.h"
 
 
 
@@ -26,6 +27,7 @@ class RobotContainer {
   //****************Subsystems*******************
   Neo550Test       m_neo550Test;
   TimeOfFlightTest m_timeOfFlightTest;
+  BrushedMotor     m_brushedMotor;
 //TalonSRXTest     m_talonSRXTest;  
 
 
