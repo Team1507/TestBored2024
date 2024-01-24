@@ -11,10 +11,11 @@ BrushedMotor::BrushedMotor()
     m_brushedMotor.RestoreFactoryDefaults();
     m_brushedMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
     
-    m_brushed_encoder.SetPosition(1.0);
-    // m_neo550_encoder.SetPosition(0.0);
-    // m_neo550_pid.SetP(0.15);
-    // m_neo550_pid.SetOutputRange(-0.1,0.1);
+    //m_brushed_encoder.SetPosition(1.0);
+    //m_brushed_encoder.SetPosition(0.0);
+
+    m_forwardLimit.EnableLimitSwitch(true);
+    m_reverseLimit.EnableLimitSwitch(true);
 
 
     //For Local Testing
@@ -40,6 +41,9 @@ void BrushedMotor::Periodic()
 
    frc::SmartDashboard::PutNumber("BrushedMotor encoder",m_brushed_encoder.GetPosition());
 
+
+   frc::SmartDashboard::PutBoolean("BrushedMotor FwdLimit",m_forwardLimit.Get() );
+   frc::SmartDashboard::PutBoolean("BrushedMotor RevLimit",m_reverseLimit.Get() );
 }
 
 

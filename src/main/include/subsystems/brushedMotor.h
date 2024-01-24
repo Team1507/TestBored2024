@@ -23,6 +23,15 @@ class BrushedMotor : public frc2::SubsystemBase {
 
   //Init SparkMax with 775 Pro with encoder test
   rev::CANSparkMax          m_brushedMotor{CAN_BRUSHEDMOTOR, rev::CANSparkMax::MotorType::kBrushed};
-  rev::SparkMaxAlternateEncoder m_brushed_encoder = m_brushedMotor.GetAlternateEncoder(rev::SparkMaxAlternateEncoder::Type::kQuadrature,1024);
+  rev::SparkRelativeEncoder m_brushed_encoder = m_brushedMotor.GetEncoder(rev::SparkRelativeEncoder::Type::kQuadrature, 4096);
+
+  //Limit Switch Test
+  rev::SparkLimitSwitch m_forwardLimit = m_brushedMotor.GetForwardLimitSwitch(rev::SparkLimitSwitch::Type::kNormallyOpen);
+  rev::SparkLimitSwitch m_reverseLimit = m_brushedMotor.GetReverseLimitSwitch(rev::SparkLimitSwitch::Type::kNormallyOpen);
+
+
+  //Do Not use Alternate Encoder
+  //rev::SparkMaxAlternateEncoder m_brushed_encoder = m_brushedMotor.GetAlternateEncoder(rev::SparkMaxAlternateEncoder::Type::kQuadrature,1024);
+
 
 };
