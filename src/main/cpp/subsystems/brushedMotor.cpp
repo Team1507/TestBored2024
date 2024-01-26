@@ -11,8 +11,6 @@ BrushedMotor::BrushedMotor()
     m_brushedMotor.RestoreFactoryDefaults();
     m_brushedMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
     
-    //m_brushed_encoder.SetPosition(1.0);
-    //m_brushed_encoder.SetPosition(0.0);
 
     m_forwardLimit.EnableLimitSwitch(true);
     m_reverseLimit.EnableLimitSwitch(true);
@@ -28,22 +26,18 @@ BrushedMotor::BrushedMotor()
 void BrushedMotor::Periodic() 
 {
     //Outputs
-    // frc::SmartDashboard::PutNumber("Neo550 Encoder", GetEncoder() );
     frc::SmartDashboard::PutNumber("BrushedMotor Power",   GetPower()   );
-
-
-    // // //Testing Power
-    SetPower( frc::SmartDashboard::GetNumber("BrushedMotor SetPwr",0) );
-
-    // //Testing Position with PID
-    // //Position = NumRotataions
-    // SetPosition( frc::SmartDashboard::GetNumber("Neo550 SetPos",0) );
 
    frc::SmartDashboard::PutNumber("BrushedMotor encoder",m_brushed_encoder.GetPosition());
 
-
    frc::SmartDashboard::PutBoolean("BrushedMotor FwdLimit",m_forwardLimit.Get() );
    frc::SmartDashboard::PutBoolean("BrushedMotor RevLimit",m_reverseLimit.Get() );
+
+   frc::SmartDashboard::PutNumber("BrushedMotor Analog",m_analogSensor.GetVoltage() );
+
+    //Testing Power
+    SetPower( frc::SmartDashboard::GetNumber("BrushedMotor SetPwr",0) );
+
 }
 
 
@@ -59,12 +53,11 @@ void BrushedMotor::Periodic()
   {
     return m_brushedMotor.Get();
   }
-//   void  brushedMotor::SetPosition(float position)
-//   {
-//     //Position = rotations
-//     m_neo550_pid.SetReference(position, rev::CANSparkMax::ControlType::kPosition);
-//   }
-//   float brushedMotor::GetEncoder(void)
-//   {
-//     return m_neo550_encoder.GetPosition();
-//   }
+
+
+  void BrushedMotor::SetEncoderPosition( float position )
+  {
+    //THIS DOES NOT WORK and causes the SparkMax to hang.
+    //m_brushed_encoder.SetPosition(position);
+    
+  }

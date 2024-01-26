@@ -19,6 +19,12 @@ void TimeOfFlightTest::Periodic()
     frc::SmartDashboard::PutBoolean("TOF: IsRangeValid",  m_timeOfFlight.IsRangeValid()   );
     frc::SmartDashboard::PutNumber("TOF: GetRange",       m_timeOfFlight.GetRange()       );
     frc::SmartDashboard::PutNumber("TOF: GetStatus",      m_timeOfFlight.GetStatus()      );
+
+    //Detecting object based on range only, ignoring IsRangeValid
+    bool objectDetect = false;
+    if( m_timeOfFlight.GetRange() < 75.0 )objectDetect = true;
+    frc::SmartDashboard::PutBoolean("TOF: ObjectDetect",  objectDetect   );
+ 
 }
 
 
