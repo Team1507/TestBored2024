@@ -27,7 +27,7 @@ class RobotContainer {
   //****************Subsystems*******************
   Neo550Test       m_neo550Test;
   TimeOfFlightTest m_timeOfFlightTest;
-  BrushedMotor     m_brushedMotor;
+  // BrushedMotor     m_brushedMotor;
 //TalonSRXTest     m_talonSRXTest;  
 
 
