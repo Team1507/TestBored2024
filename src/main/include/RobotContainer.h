@@ -12,6 +12,7 @@
 #include "subsystems/TalonSRXTest.h"
 #include "subsystems/TimeOfFlightTest.h"
 #include "subsystems/brushedMotor.h"
+#include "subsystems/ShooterAngleTest.h"
 
 
 
@@ -30,6 +31,7 @@ class RobotContainer {
   // BrushedMotor     m_brushedMotor;
 //TalonSRXTest     m_talonSRXTest;  
 
+ShooterAngleTest m_shooterAngleTest;
 
 
 
