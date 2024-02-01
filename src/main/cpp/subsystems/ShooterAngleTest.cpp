@@ -30,12 +30,13 @@ ShooterAngleTest::ShooterAngleTest()
     //Forward - releasing into the spring, less power
     //Reverse - pulling against the spring, more power
 
-    // 6"  = 2.5
+    // 6"  = 2.8
     // 16" = 1.75
 
     //For Local Testing
     frc::SmartDashboard::PutNumber("BrushedMotor SetPwr",0.0);
     frc::SmartDashboard::PutNumber("BrushedMotor SetAnalogVoltage", 2.8);
+    frc::SmartDashboard::PutNumber("BrushedMotor SetTapePosition", 6.0);
 
 }
 
@@ -52,9 +53,11 @@ void ShooterAngleTest::Periodic()
     //SetPower( frc::SmartDashboard::GetNumber("BrushedMotor SetPwr",0) );
 
     float goal_voltage = frc::SmartDashboard::GetNumber("BrushedMotor SetAnalogVoltage", 2.8);
+    float goal_pos     = frc::SmartDashboard::GetNumber("BrushedMotor SetTapePosition", 6.0);
 
-    m_pidController.SetReference(goal_voltage, rev::CANSparkMax::ControlType::kPosition);
 
+    //m_pidController.SetReference(goal_voltage, rev::CANSparkMax::ControlType::kPosition);
+    SetAngle(goal_pos);
 
     frc::SmartDashboard::PutNumber("ProcessVariable", m_analogSensor.GetPosition());
 
@@ -80,5 +83,26 @@ void ShooterAngleTest::SetEncoderPosition(float position)
 {
     // looking for solution
 }
+
+
+void ShooterAngleTest::SetAngle(float angle )
+{
+    //Calculate angle based on known values using y=mx+b calibrations
+    // X1 = 6.0,  Y1 = 2.8 
+    // X2 = 16.0, Y2 = 1.75
+    //
+
+    //  m = (y2-y1)/(x2-x1) = -0.105
+    //  b = y - mx  = 2.17 = 3.43
+
+    const float m = -0.105;
+    const float b =  3.43;
+
+    float y = (m * angle) + b;
+
+    m_pidController.SetReference(y, rev::CANSparkMax::ControlType::kPosition);
+
+}
+
 
 

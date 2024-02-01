@@ -17,6 +17,9 @@ class ShooterAngleTest : public frc2::SubsystemBase {
 
   void SetEncoderPosition(float position );
 
+  void SetAngle(float angle );
+
+
   void Periodic() override;
 
  private:
