@@ -9,6 +9,7 @@
 
 #include "commands/CmdNeo550SetPosition.h"
 #include "commands/GrpNeo550ThereAndBack.h"
+#include "commands/CmdPrintText.h"
 
 RobotContainer::RobotContainer() 
 {
@@ -23,8 +24,19 @@ RobotContainer::RobotContainer()
   ConfigureBindings();
 }
 
-void RobotContainer::ConfigureBindings() {}
+void RobotContainer::ConfigureBindings() 
+{
+  m_topDriverRightTrigger.WhileTrue(new CmdPrintText("Right Trigger Pressed"));
+  m_topDriverRightTrigger.WhileFalse(new CmdPrintText("Right Trigger Released"));  
+
+  m_topDriverAButt.OnTrue(new CmdPrintText("A Button Pressed"));
+  m_topDriverAButt.OnFalse(new CmdPrintText("A Button Released"));    
+
+}
+
+
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
   return frc2::cmd::Print("No autonomous command configured");
 }
+
