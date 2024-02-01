@@ -26,11 +26,11 @@ RobotContainer::RobotContainer()
 
 void RobotContainer::ConfigureBindings() 
 {
-  m_topDriverRightTrigger.WhileTrue(new CmdPrintText("Right Trigger Pressed"));
-  m_topDriverRightTrigger.WhileFalse(new CmdPrintText("Right Trigger Released"));  
+  // m_topDriverRightTrigger.WhileTrue(new CmdPrintText("Right Trigger Pressed"));
+  // m_topDriverRightTrigger.WhileFalse(new CmdPrintText("Right Trigger Released"));  
 
-  m_topDriverAButt.OnTrue(new CmdPrintText("A Button Pressed"));
-  m_topDriverAButt.OnFalse(new CmdPrintText("A Button Released"));    
+  // m_topDriverAButt.OnTrue(new CmdPrintText("A Button Pressed"));
+  // m_topDriverAButt.OnFalse(new CmdPrintText("A Button Released"));    
 
 }
 
