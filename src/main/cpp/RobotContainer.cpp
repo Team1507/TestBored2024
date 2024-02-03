@@ -26,6 +26,28 @@ RobotContainer::RobotContainer()
 
 void RobotContainer::ConfigureBindings() 
 {
+  //Button Testing
+  m_topDriver_A.OnTrue(new CmdPrintText("A Button Pressed"));
+  m_topDriver_A.OnFalse(new CmdPrintText("A Button Released"));
+
+  m_topDriver_B.OnTrue(new CmdPrintText("B Button Pressed"));
+  m_topDriver_B.OnFalse(new CmdPrintText("B Button Released"));
+
+
+  m_topDriver_POV_up.OnTrue(   new CmdPrintText("POV UP Button Pressed"));
+  m_topDriver_POV_down.OnTrue( new CmdPrintText("POV DOWN Button Pressed"));
+  m_topDriver_POV_left.OnTrue( new CmdPrintText("POV LEFT Button Pressed"));
+  m_topDriver_POV_right.OnTrue(new CmdPrintText("POV_RIGHT Button Pressed"));
+
+
+
+  //Composite Buttons
+  (m_topDriver_A && m_topDriver_B).OnTrue(new CmdPrintText("A&B Button Pressed") );
+
+  (m_topDriver_A && m_topDriver_POV_up).OnTrue(new CmdPrintText("A&POVup Button Pressed") );
+  (m_topDriver_A && m_topDriver_POV_down).OnTrue(new CmdPrintText("A&POVdown Button Pressed") );
+
+
   // m_topDriverRightTrigger.WhileTrue(new CmdPrintText("Right Trigger Pressed"));
   // m_topDriverRightTrigger.WhileFalse(new CmdPrintText("Right Trigger Released"));  
 

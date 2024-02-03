@@ -4,6 +4,7 @@
 #include <frc/XboxController.h>
 #include <frc/Timer.h>
 #include <frc2/command/button/JoystickButton.h>
+#include <frc2/command/button/POVButton.h>
 
 #include "subsystems/Neo550Test.h"
 #include "subsystems/TalonSRXTest.h"
@@ -18,7 +19,7 @@ class RobotContainer {
   RobotContainer();
 
   //****************Controllers*******************
-  //frc::XboxController m_topDriver{0};
+  frc::XboxController m_topDriver{0};
 
   frc::Timer m_timer;
 
@@ -37,6 +38,22 @@ ShooterAngleTest m_shooterAngleTest;
 
  private:
   void ConfigureBindings();
+
+
+  //Button Testing
+  frc2::JoystickButton m_topDriver_A{&m_topDriver,frc::XboxController::Button::kA};
+  frc2::JoystickButton m_topDriver_B{&m_topDriver,frc::XboxController::Button::kB};
+
+//        POV:
+//                  0
+//            270 --|--  90
+//                 180
+// 
+  frc2::POVButton      m_topDriver_POV_up{&m_topDriver,     0 };
+  frc2::POVButton      m_topDriver_POV_down{&m_topDriver, 180 };         
+  frc2::POVButton      m_topDriver_POV_left{&m_topDriver, 270 };         
+  frc2::POVButton      m_topDriver_POV_right{&m_topDriver, 90 };         
+
 
     // frc2::JoystickButton m_topDriverRightTrigger{&m_topDriver,frc::XboxController::Axis::kRightTrigger};
     // frc2::JoystickButton m_topDriverAButt{&m_topDriver,frc::XboxController::Button::kA};
