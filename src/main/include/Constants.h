@@ -8,3 +8,6 @@
 #define CAN_BRUSHEDMOTOR       16
 
 #define CAN_TIMEOFFLIGHT       25
+#define CAN_CANDLE_1           26
+
+
