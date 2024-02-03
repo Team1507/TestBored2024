@@ -19,7 +19,7 @@ class RobotContainer {
   RobotContainer();
 
   //****************Controllers*******************
-  frc::XboxController m_topDriver{0};
+  //frc::XboxController m_topDriver{0};
 
   frc::Timer m_timer;
 
@@ -39,7 +39,7 @@ ShooterAngleTest m_shooterAngleTest;
  private:
   void ConfigureBindings();
 
-
+/*
   //Button Testing
   frc2::JoystickButton m_topDriver_A{&m_topDriver,frc::XboxController::Button::kA};
   frc2::JoystickButton m_topDriver_B{&m_topDriver,frc::XboxController::Button::kB};
@@ -55,7 +55,6 @@ ShooterAngleTest m_shooterAngleTest;
   frc2::POVButton      m_topDriver_POV_right{&m_topDriver, 90 };         
 
 
-    // frc2::JoystickButton m_topDriverRightTrigger{&m_topDriver,frc::XboxController::Axis::kRightTrigger};
-    // frc2::JoystickButton m_topDriverAButt{&m_topDriver,frc::XboxController::Button::kA};
-    // // frc2::JoystickButton m_topDriverDpadDown{&m_topDriver,frc::XboxController::POV};
+*/
+
 };

@@ -26,6 +26,8 @@ RobotContainer::RobotContainer()
 
 void RobotContainer::ConfigureBindings() 
 {
+
+  /*
   //Button Testing
   m_topDriver_A.OnTrue(new CmdPrintText("A Button Pressed"));
   m_topDriver_A.OnFalse(new CmdPrintText("A Button Released"));
@@ -47,13 +49,7 @@ void RobotContainer::ConfigureBindings()
   (m_topDriver_A && m_topDriver_POV_up).OnTrue(new CmdPrintText("A&POVup Button Pressed") );
   (m_topDriver_A && m_topDriver_POV_down).OnTrue(new CmdPrintText("A&POVdown Button Pressed") );
 
-
-  // m_topDriverRightTrigger.WhileTrue(new CmdPrintText("Right Trigger Pressed"));
-  // m_topDriverRightTrigger.WhileFalse(new CmdPrintText("Right Trigger Released"));  
-
-  // m_topDriverAButt.OnTrue(new CmdPrintText("A Button Pressed"));
-  // m_topDriverAButt.OnFalse(new CmdPrintText("A Button Released"));    
-
+*/
 }
 
 
