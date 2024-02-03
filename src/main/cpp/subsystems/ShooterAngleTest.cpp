@@ -52,7 +52,7 @@ void ShooterAngleTest::Periodic()
     //Testing Power
     //SetPower( frc::SmartDashboard::GetNumber("BrushedMotor SetPwr",0) );
 
-    float goal_voltage = frc::SmartDashboard::GetNumber("BrushedMotor SetAnalogVoltage", 2.8);
+    //float goal_voltage = frc::SmartDashboard::GetNumber("BrushedMotor SetAnalogVoltage", 2.8);
     float goal_pos     = frc::SmartDashboard::GetNumber("BrushedMotor SetTapePosition", 6.0);
 
 
